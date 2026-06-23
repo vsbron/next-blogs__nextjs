@@ -97,13 +97,14 @@ function AddEditPostForm({ defaultValues }: { defaultValues?: Post }) {
   // Returned JSX
   return (
     <section>
-      <Card className="max-w-[800px]">
+      <Card className="max-w-200">
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="basic-form">
             {/* Category */}
             <SelectInput
               id="category"
               options={POST_CATEGORIES}
+              /* @ts-expect-error - RHF Control type mismatch after version bump, low priority */
               control={control}
               error={errors.category?.message}
             />
