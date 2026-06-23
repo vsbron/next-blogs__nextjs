@@ -9,8 +9,7 @@ import SkeletonComments from "@/components/skeletons/SkeletonComments";
 
 import useGetComments from "@/hooks/useGetComments";
 import { useState } from "react";
-import { Button } from "../ui/button";
-import { SortAsc, SortAscIcon, SortDesc } from "lucide-react";
+import { SortDesc } from "lucide-react";
 
 // Props type
 type PostCommentsProps = { postId: number };

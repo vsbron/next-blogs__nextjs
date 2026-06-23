@@ -28,8 +28,8 @@ const RobotoSerif = Roboto({
 
 // Set the main meta data
 export const metadata: Metadata = {
-  metadataBase: new URL("https://next-blogs-2025.vercel.app/"),
-  alternates: { canonical: "https://next-blogs-2025.vercel.app/" },
+  metadataBase: new URL("https://next--blogs.vercel.app/"),
+  alternates: { canonical: "https://next--blogs.vercel.app/" },
   title: {
     default: "NextBlogs - Read, Create, and Share your stories",
     template: "%s | NextBlogs",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://next-blogs-2025.vercel.app/",
+    url: "https://next--blogs.vercel.app/",
     title: "NextBlogs - Read, Create, and Share your stories",
     description:
       "Modern multi-user blogging platform to discover and enjoy articles on a variety of topics with a clean, user-friendly experience.",
