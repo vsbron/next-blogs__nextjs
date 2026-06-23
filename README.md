@@ -131,7 +131,7 @@ Accessible only to signed-in users.
 
 ## License
 
-© 2025 BroN
+©2026 BroN
 
 This repository is intended for portfolio/demo purposes. Permission is granted to view and run the project for personal evaluation. Reuse, redistribution, or commercial use is not permitted without written permission.
 
@@ -139,4 +139,4 @@ This repository is intended for portfolio/demo purposes. Permission is granted t
 
 ## Live Version
 
-[https://next-blogs-2025.vercel.app/](https://next-blogs-2025.vercel.app/)
+[https://next--blogs.vercel.app/](https://next--blogs.vercel.app/)
