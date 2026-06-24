@@ -5,11 +5,13 @@ import SectionTitle from "@/components/SectionTitle";
 import LikePosts from "@/components/dashboard/LikedPosts";
 import SkeletonPostsGrid from "@/components/skeletons/SkeletonPostsGrid";
 
+import { SITE_NAME } from "@/utils/constants";
+
 // Metadata
 export const metadata: Metadata = {
   title: "Liked posts",
   description:
-    "Discover and keep track of your favorite articles from the NextBlogs community.",
+    `Discover and keep track of your favorite articles from the ${SITE_NAME} community.`,
 };
 
 // The page

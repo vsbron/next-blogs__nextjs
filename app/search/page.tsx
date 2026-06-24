@@ -5,7 +5,7 @@ import SectionTitle from "@/components/SectionTitle";
 import SearchResults from "@/components/Search/SearchResults";
 import SkeletonSearch from "@/components/skeletons/SkeletonSearch";
 
-import { SITE_DOMAIN } from "@/utils/constants";
+import { SITE_DOMAIN, SITE_NAME } from "@/utils/constants";
 
 // Interface for the User ID
 interface SearchPageProps {
@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: `${query ? query + " - " : ""} Search Results`,
     description:
-      "Browse posts matching your search query on NextBlogs. Find articles, authors, and trending content quickly with powerful filters and a clean reading experience.",
+      `Browse posts matching your search query on ${SITE_NAME}. Find articles, authors, and trending content quickly with powerful filters and a clean reading experience.`,
     alternates: {
       canonical: `${SITE_DOMAIN}/search`,
     },

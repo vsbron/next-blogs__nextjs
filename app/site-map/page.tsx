@@ -6,14 +6,14 @@ import ArticleLayout from "@/components/ArticleLayout";
 import Authorization from "@/components/Authorization";
 import SectionTitle from "@/components/SectionTitle";
 
-import { POST_CATEGORIES, SITE_DOMAIN } from "@/utils/constants";
+import { POST_CATEGORIES, SITE_DOMAIN, SITE_NAME } from "@/utils/constants";
 import { personalAreaLinks, primaryLinks, secondaryLinks } from "@/utils/links";
 
 // Meta data
 export const metadata: Metadata = {
   title: "Sitemap",
   description:
-    "Explore the full map of NextBlogs - easily navigate through articles, authors, categories, and more.",
+    `Explore the full map of ${SITE_NAME} - easily navigate through articles, authors, categories, and more.`,
   alternates: {
     canonical: `${SITE_DOMAIN}/site-map`,
   },
@@ -31,7 +31,7 @@ async function SitemapPage() {
       <ArticleLayout>
         <p>
           Welcome to the sitemap! Here you&apos;ll find a complete overview of
-          all the sections, pages, and content available on NextBlogs. Whether
+          all the sections, pages, and content available on {SITE_NAME}. Whether
           you&apos;re looking for posts, authors, categories, or special
           features, this map helps you navigate quickly and efficiently. Use it
           as a guide to explore everything we offer and find exactly what

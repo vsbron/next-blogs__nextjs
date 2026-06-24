@@ -4,11 +4,13 @@ import { Metadata } from "next";
 import ArticleLayout from "@/components/ArticleLayout";
 import SectionTitle from "@/components/SectionTitle";
 
+import { MAIN_EMAIL, SITE_NAME } from "@/utils/constants";
+
 // Meta data
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "Review the Terms of Use for NextBlogs. Learn about your rights, responsibilities, and the conditions for using our website and services.",
+    `Review the Terms of Use for ${SITE_NAME}. Learn about your rights, responsibilities, and the conditions for using our website and services.`,
   robots: {
     index: false,
     follow: false,
@@ -23,15 +25,15 @@ function TermsOfUsePage() {
       <SectionTitle>Terms of use</SectionTitle>
       <ArticleLayout>
         <p>
-          Welcome to <strong>NextBlogs</strong> (&quot;we&quot;,
-          &quot;our&quot;, or &quot;us&quot;). By accessing or using NextBlogs
+          Welcome to <strong>{SITE_NAME}</strong> (&quot;we&quot;,
+          &quot;our&quot;, or &quot;us&quot;). By accessing or using {SITE_NAME}
           you agree to be bound by these Terms of Use. If you do not agree,
           please do not use the platform.
         </p>
 
         <SectionTitle as="h2">Eligibility</SectionTitle>
         <p>
-          You must be at least 13 years old to use NextBlogs. By registering,
+          You must be at least 13 years old to use {SITE_NAME}. By registering,
           you represent and warrant that the information you provide is accurate
           and complete.
         </p>
@@ -47,7 +49,7 @@ function TermsOfUsePage() {
         <SectionTitle as="h2">User content</SectionTitle>
         <p>
           You retain ownership of the content you create and publish on
-          NextBlogs. By posting content on the platform you grant NextBlogs a
+          {SITE_NAME}. By posting content on the platform you grant {SITE_NAME} a
           non-exclusive, royalty-free, worldwide license to host, display,
           reproduce, and distribute that content within the service for the
           purpose of operating and promoting the platform.
@@ -87,21 +89,21 @@ function TermsOfUsePage() {
         <SectionTitle as="h2">Privacy</SectionTitle>
         <p>
           Our <Link href="/privacy">Privacy Policy</Link> explains how we
-          collect, use, and share personal information. By using NextBlogs you
+          collect, use, and share personal information. By using {SITE_NAME} you
           consent to that collection and processing.
         </p>
 
         <SectionTitle as="h2">Third-party services</SectionTitle>
         <p>
-          NextBlogs may integrate with third-party services (e.g.,
+          {SITE_NAME} may integrate with third-party services (e.g.,
           authentication, analytics, hosting). Those services are governed by
           their own terms and privacy policies; we are not responsible for their
           practices.
         </p>
 
         <SectionTitle as="h2">Disclaimers</SectionTitle>
-        <p>
-          NEXTBLOGS IS PROVIDED <em>AS IS</em> AND <em>AS AVAILABLE</em> WITHOUT
+        <p className="uppercase">
+          {SITE_NAME} IS PROVIDED <em>AS IS</em> AND <em>AS AVAILABLE</em> WITHOUT
           WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE
           SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE. USER-GENERATED
           CONTENT IS THE RESPONSIBILITY OF THE POSTING USER; WE DO NOT ENDORSE
@@ -109,8 +111,8 @@ function TermsOfUsePage() {
         </p>
 
         <SectionTitle as="h2">Limitation of liability</SectionTitle>
-        <p>
-          TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL NEXTBLOGS,
+        <p className="uppercase">
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL {SITE_NAME},
           ITS AFFILIATES, OR CONTRIBUTORS BE LIABLE FOR ANY INDIRECT,
           INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF YOUR USE
           OF THE SERVICE.
@@ -126,14 +128,14 @@ function TermsOfUsePage() {
         <SectionTitle as="h2">Governing law</SectionTitle>
         <p>
           These Terms are governed by the laws of the applicable jurisdiction
-          where NextBlogs operates, without regard to conflict-of-law
+          where {SITE_NAME} operates, without regard to conflict-of-law
           principles.
         </p>
 
         <SectionTitle as="h3">Contact us</SectionTitle>
         <p>
           For questions about these Terms, contact us at{" "}
-          <a href="mailto:vsbron.webdev@gmail.com">vsbron.webdev@gmail.com</a>.
+          <a href={`mailto:${MAIN_EMAIL}`}>{MAIN_EMAIL}</a>.
         </p>
       </ArticleLayout>
     </section>

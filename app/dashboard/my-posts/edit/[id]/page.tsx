@@ -7,6 +7,7 @@ import SectionTitle from "@/components/SectionTitle";
 import AddEditPostForm from "@/components/dashboard/AddEditPostForm";
 import SkeletonEditPost from "@/components/skeletons/SkeletonEditPost";
 import { fetchPost } from "@/utils/actions/posts";
+import { SITE_NAME } from "@/utils/constants";
 
 // Interface for the Post ID
 interface SinglePostPageProps {
@@ -16,7 +17,7 @@ interface SinglePostPageProps {
 // Metadata
 export const metadata: Metadata = {
   title: "Edit Post",
-  description: "Update your existing post on NextBlogs.",
+  description: `Update your existing post on ${SITE_NAME}.`,
 };
 
 // The page

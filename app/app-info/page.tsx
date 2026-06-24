@@ -3,13 +3,13 @@ import { Metadata } from "next";
 import ArticleLayout from "@/components/ArticleLayout";
 import SectionTitle from "@/components/SectionTitle";
 
-import { SITE_DOMAIN } from "@/utils/constants";
+import { SITE_DOMAIN, SITE_NAME } from "@/utils/constants";
 
 // Meta data
 export const metadata: Metadata = {
   title: "App Info",
   description:
-    "Learn more about NextBlogs - the modern multi-user blogging platform built for writers and readers alike.",
+    `Learn more about ${SITE_NAME} - the modern multi-user blogging platform built for writers and readers alike.`,
   alternates: {
     canonical: `${SITE_DOMAIN}/app-info`,
   },
@@ -23,7 +23,7 @@ function AppInfoPage() {
       <SectionTitle>App Info</SectionTitle>
       <ArticleLayout>
         <p>
-          NextBlogs is a multi-user blogging platform built with{" "}
+          {SITE_NAME} is a multi-user blogging platform built with{" "}
           <strong>Next.js</strong>, <strong>Clerk</strong>,{" "}
           <strong>Prisma</strong>, and <strong>Supabase</strong>.<br />
           It offers a clean, responsive environment for reading, writing, and

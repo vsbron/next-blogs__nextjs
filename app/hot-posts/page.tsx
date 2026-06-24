@@ -5,13 +5,13 @@ import SectionTitle from "@/components/SectionTitle";
 import TrendingPosts from "@/components/PostLists/TrendingPosts";
 import SkeletonPostsList from "@/components/skeletons/SkeletonPostsList";
 
-import { SITE_DOMAIN } from "@/utils/constants";
+import { SITE_DOMAIN, SITE_NAME } from "@/utils/constants";
 
 // Meta data
 export const metadata: Metadata = {
   title: "Trending Posts",
   description:
-    "Explore the hottest posts on NextBlogs - trending stories and popular reads shared by our community.",
+    `Explore the hottest posts on ${SITE_NAME} - trending stories and popular reads shared by our community.`,
   alternates: {
     canonical: `${SITE_DOMAIN}/hot-posts`,
   },

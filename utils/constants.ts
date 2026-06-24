@@ -2,6 +2,8 @@ import { countries } from "countries-list";
 import { User } from "./types";
 
 export const SITE_DOMAIN = "https://next--blogs.vercel.app";
+export const SITE_NAME = "NextBlogs";
+export const MAIN_EMAIL = "vsbron.webdev@gmail.com";
 export const BUCKET_NAME = "post-images";
 export const ARTICLES_PER_PAGE = 12;
 export const USERS_PER_PAGE = 12;

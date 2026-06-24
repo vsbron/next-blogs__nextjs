@@ -5,6 +5,7 @@ import PostPreviewTile from "@/components/PostPreview/PostPreviewTile";
 import PostsGridLayout from "@/components/PostPreview/PostsGridLayout";
 
 import { fetchUserLikedPosts } from "@/utils/actions/posts";
+import { SITE_NAME } from "@/utils/constants";
 
 async function LikePosts() {
   // Fetch user's posts
@@ -18,7 +19,7 @@ async function LikePosts() {
         <p>
           Looks like you have not liked any posts yet.
           <br />
-          Browse through <Link href="/posts/">all posts</Link> on NextBlogs and
+          Browse through <Link href="/posts/">all posts</Link> on {SITE_NAME} and
           find something you enjoy.
         </p>
       </ArticleLayout>

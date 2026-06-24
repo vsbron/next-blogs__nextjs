@@ -3,11 +3,13 @@ import { Metadata } from "next";
 import ArticleLayout from "@/components/ArticleLayout";
 import SectionTitle from "@/components/SectionTitle";
 
+import { MAIN_EMAIL, SITE_NAME } from "@/utils/constants";
+
 // Meta data
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Understand how NextBlogs collects, uses, and protects your personal information. Read our Privacy Policy for details on data handling and user rights.",
+    `Understand how ${SITE_NAME} collects, uses, and protects your personal information. Read our Privacy Policy for details on data handling and user rights.`,
   robots: {
     index: false,
     follow: false,
@@ -22,7 +24,7 @@ function PrivacyPolicyPage() {
       <SectionTitle>Privacy policy</SectionTitle>
       <ArticleLayout>
         <p>
-          Welcome to <strong>NextBlogs</strong>. We value your privacy and are
+          Welcome to <strong>{SITE_NAME}</strong>. We value your privacy and are
           committed to protecting your personal information. This Privacy Policy
           explains how we collect, use, and safeguard your data when you use our
           website and related services.
@@ -49,7 +51,7 @@ function PrivacyPolicyPage() {
 
         <SectionTitle as="h2">How we use your information</SectionTitle>
         <ul>
-          <li>To operate and improve the NextBlogs platform.</li>
+          <li>To operate and improve the {SITE_NAME} platform.</li>
           <li>To personalize your experience and display relevant content.</li>
           <li>
             To communicate with you regarding updates, features, or issues.
@@ -74,7 +76,7 @@ function PrivacyPolicyPage() {
           </li>
           <li>
             When required by law or to protect the rights and safety of users or
-            NextBlogs.
+            {SITE_NAME}.
           </li>
         </ul>
 
@@ -89,7 +91,7 @@ function PrivacyPolicyPage() {
         <p>
           We use industry-standard measures to protect your data from
           unauthorized access, disclosure, or alteration. However, no online
-          service is completely secure, and you use NextBlogs at your own risk.
+          service is completely secure, and you use {SITE_NAME} at your own risk.
         </p>
 
         <SectionTitle as="h2">Your rights</SectionTitle>
@@ -110,7 +112,7 @@ function PrivacyPolicyPage() {
           If you have any questions or concerns about this Privacy Policy,
           please contact us at:
           <br />
-          <a href="mailto:vsbron.webdev@gmail.com">vsbron.webdev@gmail.com</a>.
+          <a href={`mailto:${MAIN_EMAIL}`}>{MAIN_EMAIL}</a>.
         </p>
       </ArticleLayout>
     </section>

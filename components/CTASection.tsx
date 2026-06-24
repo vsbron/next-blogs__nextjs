@@ -6,8 +6,9 @@ import Authorization from "@/components/Authorization";
 import SectionTitle from "@/components/SectionTitle";
 import { Button } from "@/components/ui/button";
 
-import { PencilLine } from "lucide-react";
 import CTAImg from "@/assets/ctaImg.png";
+import { PencilLine } from "lucide-react";
+import { SITE_NAME } from "@/utils/constants";
 
 function CTASection({ index = false }: { index?: boolean }) {
   // Returned JSX
@@ -19,7 +20,7 @@ function CTASection({ index = false }: { index?: boolean }) {
     >
       <SectionTitle as={index ? "h1" : "div"} className="pr-10">
         Read, Create and Share your stories on{" "}
-        <span className="text-primary font-semibold">nextblogs</span>
+        <span className="text-primary font-semibold lowercase">{SITE_NAME}</span>
       </SectionTitle>
       <div className="max-w-3xl pr-10 xs:pr-36 md:pr-20">
         <p className="text-xl sm:text-2xl">
@@ -60,7 +61,7 @@ function CTABackground() {
     <div className="absolute h-full -right-5 xs:right-0 inset-0 left-1/3 overflow-hidden -z-10">
       <Image
         src={CTAImg}
-        alt="NextBlogs"
+        alt={SITE_NAME}
         fill
         className="object-cover xs:rounded-xl"
         sizes="(max-width: 1200px) 90vw, 50vw"

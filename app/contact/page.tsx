@@ -4,11 +4,13 @@ import ArticleLayout from "@/components/ArticleLayout";
 import SectionTitle from "@/components/SectionTitle";
 import ContactUsForm from "@/components/ContactUsForm";
 
+import { SITE_NAME } from "@/utils/constants";
+
 // Meta data
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with the NextBlogs team for questions, feedback, or collaboration opportunities.",
+    `Get in touch with the ${SITE_NAME} team for questions, feedback, or collaboration opportunities.`,
   robots: {
     index: false,
     follow: false,

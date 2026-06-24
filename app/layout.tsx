@@ -7,8 +7,10 @@ import Footer from "@/components/Footer";
 import { Providers } from "@/components/Providers";
 import { Toaster } from "@/components/ui/sonner";
 
+import { SITE_NAME } from "@/utils/constants";
 import "./globals.css";
 import "./ql-styles.css";
+
 
 // Import the fonts
 const PoppinsSerif = Poppins({
@@ -31,8 +33,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://next--blogs.vercel.app/"),
   alternates: { canonical: "https://next--blogs.vercel.app/" },
   title: {
-    default: "NextBlogs - Read, Create, and Share your stories",
-    template: "%s | NextBlogs",
+    default: `${SITE_NAME} - Read, Create, and Share your stories`,
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "Modern multi-user blogging platform to discover and enjoy articles on a variety of topics with a clean, user-friendly experience.",
@@ -48,16 +50,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://next--blogs.vercel.app/",
-    title: "NextBlogs - Read, Create, and Share your stories",
+    title: `${SITE_NAME} - Read, Create, and Share your stories`,
     description:
       "Modern multi-user blogging platform to discover and enjoy articles on a variety of topics with a clean, user-friendly experience.",
-    siteName: "NextBlogs",
+    siteName: `${SITE_NAME}`,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NextBlogs",
+        alt: SITE_NAME,
       },
     ],
     locale: "en_US",
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "NextBlogs - Read, Create, and Share your stories",
+    title: `${SITE_NAME} - Read, Create, and Share your stories`,
     description:
       "Modern multi-user blogging platform to discover and enjoy articles on a variety of topics with a clean, user-friendly experience.",
     images: ["/og-image.png"],
