@@ -352,8 +352,38 @@ export const fetchUserLikedPosts = async () => {
 
 /* GENERAL STATS */
 // Server action function that fetches general stats data
+// export const fetchGeneralStats = async () => {
+//   const [likedPosts, commentedPosts, mostPosts] = await Promise.all([
+//     db.post.findMany({
+//       take: 10,
+//       orderBy: { likesCount: "desc" },
+//       select: {
+//         id: true,
+//         title: true,
+//         likesCount: true,
+//       },
+//     }),
+//     db.post.findMany({
+//       take: 10,
+//       orderBy: { views: "desc" },
+//       select: { id: true, title: true, commentsCount: true },
+//     }),
+//     db.user.findMany({
+//       take: 10,
+//       orderBy: { posts: { _count: "desc" } },
+//       select: {
+//         username: true,
+//         displayName: true,
+//         _count: { select: { posts: true } },
+//       },
+//     }),
+//   ]);
+
+//   return { likedPosts, commentedPosts, mostPosts };
+// };
+
 export const fetchGeneralStats = async () => {
-  const [likedPosts, commentedPosts, mostPosts] = await Promise.all([
+  const [likedPosts, commentedPosts, mostPosts] = await db.$transaction([
     db.post.findMany({
       take: 10,
       orderBy: { likesCount: "desc" },
@@ -378,6 +408,5 @@ export const fetchGeneralStats = async () => {
       },
     }),
   ]);
-
   return { likedPosts, commentedPosts, mostPosts };
 };

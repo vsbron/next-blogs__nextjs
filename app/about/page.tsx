@@ -22,7 +22,7 @@ function AboutPage() {
       <SectionTitle>About Us</SectionTitle>
       <ArticleLayout>
         <p>
-          Welcome to <strong>Next Blogs</strong> - a fully functional blogging
+          Welcome to <strong>{SITE_NAME}</strong> - a fully functional blogging
           platform built as a personal portfolio project.
         </p>
         <p>
@@ -33,7 +33,7 @@ function AboutPage() {
         </p>
         <SectionTitle as="h2">Project Purpose</SectionTitle>
         <p>
-          Next Blogs was created as a <strong>portfolio project</strong>, but
+          {SITE_NAME} was created as a <strong>portfolio project</strong>, but
           with the mindset of building a real product rather than a simplified
           example.
         </p>
@@ -68,7 +68,7 @@ function AboutPage() {
         </p>
         <SectionTitle as="h2">Usage &amp; Disclaimer</SectionTitle>
         <p>
-          Next Blogs is not intended for commercial use. It exists as a learning
+          {SITE_NAME} is not intended for commercial use. It exists as a learning
           project and a technical showcase.
         </p>
         <p>
@@ -83,7 +83,7 @@ function AboutPage() {
           theoretical examples.
         </p>
         <p>
-          Thanks for taking the time to explore <strong>Next Blogs</strong>.
+          Thanks for taking the time to explore <strong>{SITE_NAME}</strong>.
         </p>
       </ArticleLayout>
     </section>

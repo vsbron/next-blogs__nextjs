@@ -30,7 +30,7 @@ function ContactPage() {
           free to reach out.
         </p>
         <p>
-          Next Blogs is a fully functional platform, and input from real users
+          {SITE_NAME} is a fully functional platform, and input from real users
           helps shape future improvements, refinements, and experiments.
         </p>
         <p>
