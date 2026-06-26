@@ -13,7 +13,7 @@ function Copyrights() {
       <span className="inline-block">
         Built by VSBroN as a portfolio{" "}
         <a
-          href="https://github.com/vsbron/next-blog-2025-nextjs"
+          href="https://github.com/vsbron/next-blogs__nextjs"
           target="_blank"
           className="underline hover:no-underline"
         >
