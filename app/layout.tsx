@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Poppins } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import Container from "@/components/Container";
 import Header from "@/components/Header";
@@ -108,6 +109,7 @@ export default function RootLayout({
           <Footer />
           <Toaster />
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
