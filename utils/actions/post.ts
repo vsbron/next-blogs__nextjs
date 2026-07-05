@@ -12,7 +12,7 @@ import { supabase, uploadImage } from "../supabase";
 
 // Action function to create a new post
 export const createEditPostAction = async (
-  formData: FormData
+  formData: FormData,
 ): actionReturnType => {
   // Get the current user clerkId
   const { userId } = await auth();
@@ -53,7 +53,7 @@ export const createEditPostAction = async (
 // Action function to edit a post
 export const editPostAction = async (
   formData: FormData,
-  postId: number
+  postId: number,
 ): actionReturnType => {
   // Get the current user clerkId
   const { userId } = await auth();
@@ -175,8 +175,12 @@ export const incrementPostView = async (id: number) => {
 };
 
 // Action function that increases the likes count
-export const togglePostLike = async (postId: number, userId: string) => {
-  // Check if pos twas already liked
+export const togglePostLike = async (postId: number) => {
+  // Get the current user clerkId
+  const { userId } = await auth();
+  if (!userId) redirect("/");
+
+  // Check if post was already liked
   const existing = await db.like.findUnique({
     where: { userId_postId: { userId, postId } },
   });

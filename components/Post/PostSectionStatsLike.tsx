@@ -39,7 +39,7 @@ function PostSectionStatsLike({ likes, postId }: PostSectionStatsLikeProps) {
     if (!currentUserId) return openSignIn();
 
     // Change the liked post value
-    const result = await togglePostLike(postId, currentUserId);
+    const result = await togglePostLike(postId);
     setIsLiked(result.liked);
 
     // Update the likes count and trigger toast
@@ -52,7 +52,7 @@ function PostSectionStatsLike({ likes, postId }: PostSectionStatsLikeProps) {
       <ThumbsUp
         className={cn(
           "post-stats-icon cursor-pointer transition-colors duration-200",
-          isLiked && "fill-primary"
+          isLiked && "fill-primary",
         )}
         onClick={likePostHandler}
       />
