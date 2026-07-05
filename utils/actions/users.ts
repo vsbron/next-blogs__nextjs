@@ -61,7 +61,7 @@ export async function fetchCurrentUser() {
 // Server action function that returns user based on clerkID
 export async function fetchAllUsers(
   filters: Record<string, string>,
-  page: number
+  page: number,
 ) {
   // Skip pages
   const skip = (page - 1) * USERS_PER_PAGE;
@@ -184,7 +184,7 @@ export type UserStats = {
 };
 // Server action function that collects user's stats
 export async function fetchUserStats(
-  userId?: string
+  userId?: string,
 ): Promise<UserStats | null> {
   // Get current user ID if not provided
   if (!userId) {
@@ -216,7 +216,7 @@ export type UserTopPosts = {
 
 // Server action function that collects user's top posts
 export async function fetchUserTopsPosts(
-  userId?: string
+  userId?: string,
 ): Promise<UserTopPosts> {
   // Get current user ID if not provided
   if (!userId) {
@@ -249,10 +249,14 @@ export async function fetchUserTopsPosts(
 }
 
 // Small server action function for avatar update in DB
-export async function updateUserAvatar(
-  userId: string,
-  imageUrl: string
-): Promise<void> {
+export async function updateUserAvatar(imageUrl: string): Promise<void> {
+  // Get the current user clerkId
+  const { userId } = await auth();
+
+  // Guard clause
+  if (!userId) throw new Error("Not authenticated");
+
+  // Update the avatar
   try {
     await db.user.update({
       where: { clerkId: userId },

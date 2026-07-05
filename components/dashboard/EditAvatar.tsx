@@ -23,7 +23,7 @@ function EditAvatar({ user }: { user: ClerkUser }) {
 
   // Verification function
   const setAvatar = useReverification((file: File) =>
-    user?.setProfileImage({ file })
+    user?.setProfileImage({ file }),
   );
 
   // Form submit handler
@@ -46,7 +46,7 @@ function EditAvatar({ user }: { user: ClerkUser }) {
       if (!newAvatar) throw new Error("Could not update avatar");
 
       // Update image in the prisma
-      await updateUserAvatar(user!.id, newAvatar.publicUrl!);
+      await updateUserAvatar(newAvatar.publicUrl!);
 
       // Display the message and redirect
       toast("Avatar successfully updated");
@@ -55,7 +55,7 @@ function EditAvatar({ user }: { user: ClerkUser }) {
       setErrorMessage(
         err instanceof Error
           ? err.message
-          : "There was some error while updating the avatar"
+          : "There was some error while updating the avatar",
       );
     } finally {
       // Disable loading state
