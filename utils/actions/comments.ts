@@ -87,6 +87,17 @@ export async function editCommentAction(commentId: number, data: any) {
   const { userId } = await auth();
   if (!userId) redirect("/dashboard");
 
+  // Fetch the comment to check ownership
+  const comment = await db.comment.findUnique({
+    where: { id: commentId },
+    select: { userId: true },
+  });
+
+  // Guard clauses
+  if (!comment) return { success: false, message: "Comment not found" };
+  if (comment.userId !== userId)
+    return { success: false, message: "Unauthorized" };
+
   try {
     // Parse and validate
     const parsedData = {
@@ -111,7 +122,7 @@ export async function editCommentAction(commentId: number, data: any) {
 // Action function to delete a comment
 export const deleteCommentAction = async (
   commentId: number,
-  postId: number
+  postId: number,
 ): actionReturnType => {
   // Get the current user clerkId
   const { userId } = await auth();

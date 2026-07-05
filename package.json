@@ -1,6 +1,6 @@
 {
   "name": "next-blogs__nextjs",
-  "version": "1.22.44",
+  "version": "1.22.45",
   "private": true,
   "scripts": {
     "dev": "next dev",
