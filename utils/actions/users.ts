@@ -156,13 +156,25 @@ export async function updateUserAction(formData: FormData) {
 
 // Fetch user by his username
 export const fetchUser = cache(async (username: string) => {
+  // Get current viewer, if any
+  const { userId: viewerId } = await auth();
+
   // Fetch the user using its username
   const user = await db.user.findUnique({
     where: { username: username },
   });
 
-  // Return user
-  return user;
+  // Guard clause
+  if (!user) return null;
+
+  // Only expose the real email if it's the owner viewing, or they opted in
+  const isOwner = viewerId === user.clerkId;
+
+  // Return user with email nulled out if not allowed to see it
+  return {
+    ...user,
+    email: user.showEmail || isOwner ? user.email : null,
+  };
 });
 
 // Fetch user by his username

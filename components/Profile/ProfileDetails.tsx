@@ -48,7 +48,7 @@ async function ProfileDetails({
       <ProfileDetailsLine icon={<Flag />} label="Country" className="mb-3">
         {country || "Unknown"}
       </ProfileDetailsLine>
-      <div className="mb-4 max-w-[550px]">
+      <div className="mb-4 max-w-137.5">
         <ProfileDetailsLine icon={<User />} label="About" column={true}>
           {bio || "No info on user"}
         </ProfileDetailsLine>
