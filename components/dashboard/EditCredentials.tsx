@@ -22,13 +22,13 @@ function EditCredentials() {
     redirect("/");
   }
   if (!isLoaded) {
-    return <Skeleton className="max-w-[450px] h-40 md:h-100" />;
+    return <Skeleton className="max-w-112.5 h-40 md:h-100" />;
   }
 
   // Returned JSX
   return (
     <section>
-      <Card className="max-w-[450px]">
+      <Card className="max-w-112.5">
         <CardContent>
           <EditEmail user={user} />
           <SectionSeparator />

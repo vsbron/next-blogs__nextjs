@@ -43,7 +43,7 @@ function ProfileInfo({ user, editBtns = false }: ProfileInfoProps) {
       <div className="grid lg:grid-cols-[1.2fr_1fr] items-start gap-8 max-w-225 mb-8">
         <Card>
           <CardContent>
-            <ProfileDetails user={user} />
+            <ProfileDetails user={user} isOwner={editBtns} />
             {editBtns && (
               <ButtonsContainer>
                 <Button asChild>

@@ -29,7 +29,7 @@ function ProfileDetailsLine({
     <div
       className={[
         "flex max-xs:items-start max-xs:mb-1",
-        column ? "flex-col" : "items-end",
+        column ? "flex-col" : "items-start",
         !wide && "max-xs:flex-col",
         className,
       ]
