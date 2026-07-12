@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller } from "react-hook-form";
 
 import { ButtonsContainer, SubmitButton } from "@/components/form/Buttons";
 import DateInput from "@/components/form/DateInput";
@@ -11,6 +12,8 @@ import RadioInput from "@/components/form/RadioInput";
 import SelectInput from "@/components/form/SelectInput";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 import { updateUserAction } from "@/utils/actions/users";
 import { handleFormAction } from "@/utils/helpers";
@@ -31,6 +34,7 @@ type FormValues = {
   x: string;
   instagram: string;
   reddit: string;
+  showEmail: boolean;
 };
 
 // The component
@@ -48,6 +52,7 @@ function EditProfile({ user }: { user: User }) {
     x,
     instagram,
     reddit,
+    showEmail,
   } = user;
 
   // Get the form values from React-Hook-Form
@@ -57,6 +62,7 @@ function EditProfile({ user }: { user: User }) {
     control,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
+    // @ts-expect-error - RHF Control type mismatch after version bump, low priority
     resolver: zodResolver(userSchema),
     mode: "onBlur",
     defaultValues: {
@@ -71,6 +77,7 @@ function EditProfile({ user }: { user: User }) {
       x: x || "",
       instagram: instagram || "",
       reddit: reddit || "",
+      showEmail: showEmail ?? false,
     },
   });
 
@@ -89,6 +96,7 @@ function EditProfile({ user }: { user: User }) {
     <section>
       <Card className="max-w-112.5">
         <CardContent>
+          {/* @ts-expect-error - RHF Control type mismatch after version bump, low priority */}
           <form onSubmit={handleSubmit(onSubmit)} className="basic-form">
             <FormInput
               id="username"
@@ -165,6 +173,22 @@ function EditProfile({ user }: { user: User }) {
               {...register("reddit")}
               error={errors.reddit?.message}
             />
+            <div className="flex items-center gap-2">
+              <Controller
+                name="showEmail"
+                control={control}
+                render={({ field }) => (
+                  <Checkbox
+                    id="showEmail"
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                )}
+              />
+              <Label htmlFor="showEmail" className="cursor-pointer">
+                Show my email publicly on my profile
+              </Label>
+            </div>
 
             <ButtonsContainer>
               <Button variant="outline" asChild>

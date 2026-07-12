@@ -8,7 +8,7 @@ import { VenusAndMars, Mail, Flag, User, Cake } from "lucide-react";
 
 async function ProfileDetails({ user }: { user: UserType }) {
   // Destructure the user
-  const { email, bio, birthday, gender, country } = user;
+  const { email, bio, birthday, gender, country, showEmail } = user;
 
   // Format birth date
   const dateBirth = birthday ? formatDate(new Date(birthday)) : "Unknown";
@@ -17,9 +17,11 @@ async function ProfileDetails({ user }: { user: UserType }) {
   return (
     <div className="flex flex-col gap-y-1">
       <h5 className="text-xl font-medium">Details:</h5>
-      <ProfileDetailsLine icon={<Mail />} label="Email" className="mb-3">
-        {email}
-      </ProfileDetailsLine>
+      {showEmail && (
+        <ProfileDetailsLine icon={<Mail />} label="Email" className="mb-3">
+          {email}
+        </ProfileDetailsLine>
+      )}
 
       <ProfileDetailsLine icon={<Cake />} label="Birthday">
         {dateBirth}{" "}

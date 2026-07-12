@@ -27,6 +27,7 @@ export type User = UserPreview & {
   x: string | null;
   instagram: string | null;
   reddit: string | null;
+  showEmail: boolean;
 };
 
 // Post type

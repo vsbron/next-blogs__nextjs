@@ -40,6 +40,7 @@ export const userSchema = z.object({
   x: z.string(),
   instagram: z.string(),
   reddit: z.string(),
+  showEmail: z.preprocess((val) => val === "true" || val === true, z.boolean()),
 });
 
 export type UserSchema = z.infer<typeof userSchema>;

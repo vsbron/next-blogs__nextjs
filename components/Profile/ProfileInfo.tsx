@@ -40,7 +40,7 @@ function ProfileInfo({ user, editBtns = false }: ProfileInfoProps) {
           <h4 className="text-2xl text-foreground/50">{username}</h4>
         </div>
       </div>
-      <div className="grid lg:grid-cols-[1.2fr_1fr] items-start gap-8 max-w-[900px] mb-8">
+      <div className="grid lg:grid-cols-[1.2fr_1fr] items-start gap-8 max-w-225 mb-8">
         <Card>
           <CardContent>
             <ProfileDetails user={user} />

@@ -51,7 +51,7 @@ The platform focuses on clarity, modular design, and a smooth reading and writin
 
 - 👤 **User Authentication** via Clerk (accounts stored in Prisma/Supabase and linked by `clerkId`)
 - 📊 **Dashboard**: profile settings, user posts, liked posts, and basic stats
-- ✏️ **Editable User Profile** (avatar, bio, socials, country, gender)
+- ✏️ **Editable User Profile** (avatar, bio, socials, country, gender, optional public email)
 - ✍️ **Add, Edit, Delete Posts** with a Quill WYSIWYG editor
 - 🔒 **Secure Data Storage** in Supabase Postgres, managed through Prisma
 - 🔄 **Server Actions** + **React Query** for fetching dynamic lists
@@ -95,7 +95,7 @@ The platform focuses on clarity, modular design, and a smooth reading and writin
 
 Accessible only to signed-in users.
 
-- **Profile Settings**: manage avatar, display name, username, bio, date of birth, social links, country, and gender
+- **Profile Settings**: manage avatar, display name, username, bio, date of birth, social links, country, gender, and email visibility (opt-in to show email on public profile)
 - **Add Post**: create new posts with a full editor
 - **My Posts**: view, edit, or delete your posts
 - **Liked Posts**: see posts you've liked

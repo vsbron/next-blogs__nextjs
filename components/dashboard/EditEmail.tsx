@@ -21,7 +21,7 @@ function EditEmail({ user }: { user: ClerkUser }) {
 
   // Verification functions
   const addNewEmail = useReverification((email: string) =>
-    user?.createEmailAddress({ email })
+    user?.createEmailAddress({ email }),
   );
   // const setPrimaryMail = useReverification(async (emailId: string) => {
   //   await user?.update({ primaryEmailAddressId: emailId });
@@ -55,7 +55,7 @@ function EditEmail({ user }: { user: ClerkUser }) {
       setErrorMessage(
         err instanceof Error
           ? err.message
-          : "There was some error while adding an email"
+          : "There was some error while adding an email",
       );
     } finally {
       // Disable loading state
@@ -87,7 +87,7 @@ function EditEmail({ user }: { user: ClerkUser }) {
       toast("Email removed");
     } catch (err) {
       setErrorMessage(
-        err instanceof Error ? err.message : "There was some error"
+        err instanceof Error ? err.message : "There was some error",
       );
     } finally {
       // Disable loading state

@@ -51,6 +51,7 @@ export async function fetchCurrentUser() {
       x: true,
       instagram: true,
       reddit: true,
+      showEmail: true,
     },
   });
 

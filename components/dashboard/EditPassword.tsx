@@ -22,7 +22,7 @@ function EditPassword({ user }: { user: ClerkUser }) {
       user?.updatePassword({
         currentPassword: password,
         newPassword: newPassword,
-      })
+      }),
   );
 
   // Form submit handler
@@ -59,7 +59,7 @@ function EditPassword({ user }: { user: ClerkUser }) {
       setErrorMessage(
         err instanceof Error
           ? err.message
-          : "There was some error while updating a password"
+          : "There was some error while updating a password",
       );
     } finally {
       // Disable loading state
