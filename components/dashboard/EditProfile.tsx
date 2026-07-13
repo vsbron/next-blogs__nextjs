@@ -3,24 +3,21 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller } from "react-hook-form";
 
 import { ButtonsContainer, SubmitButton } from "@/components/form/Buttons";
 import DateInput from "@/components/form/DateInput";
+import FormCheckbox from "@/components/form/FormCheckbox";
 import FormInput from "@/components/form/FormInput";
 import RadioInput from "@/components/form/RadioInput";
 import SelectInput from "@/components/form/SelectInput";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 
 import { updateUserAction } from "@/utils/actions/users";
 import { handleFormAction } from "@/utils/helpers";
 import { COUNTRIES, GENDERS } from "@/utils/constants";
 import { userSchema } from "@/utils/schemas";
 import { User } from "@/utils/types";
-import FormCheckbox from "../form/FormCheckbox";
 
 // Type for form values
 type FormValues = {
@@ -180,7 +177,6 @@ function EditProfile({ user }: { user: User }) {
               label="Show my email publicly on my profile"
               /* @ts-expect-error - RHF Control type mismatch after version bump, low priority */
               control={control}
-              error={errors.showEmail?.message}
             />
 
             <ButtonsContainer>

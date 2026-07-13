@@ -1,22 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Control, Controller } from "react-hook-form";
+
+import FormGroup from "@/components/form/FormGroup";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import FormGroup from "./FormGroup";
-import { Control, Controller } from "react-hook-form";
 
 // Props type
 type FormCheckboxProps = {
   id: string;
   label: string;
   control: Control<any>;
-  error?: string;
 };
 
 // The component
-function FormCheckbox({ error, control, ...props }: FormCheckboxProps) {
-  // Destructure some props
-  const { id, label } = props;
-
+function FormCheckbox({ control, id, label }: FormCheckboxProps) {
   // Returned JSX
   return (
     <FormGroup>
@@ -36,7 +33,6 @@ function FormCheckbox({ error, control, ...props }: FormCheckboxProps) {
           </div>
         )}
       />
-      {error && <span className="text-primary text-sm">{error}</span>}
     </FormGroup>
   );
 }
