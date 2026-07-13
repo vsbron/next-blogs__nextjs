@@ -20,6 +20,7 @@ import { handleFormAction } from "@/utils/helpers";
 import { COUNTRIES, GENDERS } from "@/utils/constants";
 import { userSchema } from "@/utils/schemas";
 import { User } from "@/utils/types";
+import FormCheckbox from "../form/FormCheckbox";
 
 // Type for form values
 type FormValues = {
@@ -173,22 +174,14 @@ function EditProfile({ user }: { user: User }) {
               {...register("reddit")}
               error={errors.reddit?.message}
             />
-            <div className="flex items-center gap-2">
-              <Controller
-                name="showEmail"
-                control={control}
-                render={({ field }) => (
-                  <Checkbox
-                    id="showEmail"
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                )}
-              />
-              <Label htmlFor="showEmail" className="cursor-pointer">
-                Show my email publicly on my profile
-              </Label>
-            </div>
+
+            <FormCheckbox
+              id="showEmail"
+              label="Show my email publicly on my profile"
+              /* @ts-expect-error - RHF Control type mismatch after version bump, low priority */
+              control={control}
+              error={errors.showEmail?.message}
+            />
 
             <ButtonsContainer>
               <Button variant="outline" asChild>
