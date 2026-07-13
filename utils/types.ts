@@ -18,7 +18,7 @@ export type UserPreview = UserMin & {
 // User type
 export type User = UserPreview & {
   clerkId: string;
-  email: string;
+  email: string | null;
   birthday: string | null;
   gender: string;
   bio: string | null;
